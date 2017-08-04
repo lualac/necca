@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Tanislav Robert Marian">
+
+	<title>Contato</title>
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="assets/images/favicon.png">
+	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+
+	<!-- Bootstrap core CSS -->
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Plugins -->
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+	<link href="assets/css/et-line-font.css" rel="stylesheet">
+	<link href="assets/css/simpletextrotator.css" rel="stylesheet">
+	<link href="assets/css/magnific-popup.css" rel="stylesheet">
+	<link href="assets/css/owl.carousel.css" rel="stylesheet">
+	<link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
+	<link href="assets/css/superslides.css" rel="stylesheet">
+	<link href="assets/css/margins.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet">
+
+	<!-- Template core CSS -->
+	<link href="assets/css/style.css" rel="stylesheet">
+	<!-- Responsive media querries -->
+	<link href="assets/css/responsive.css" rel="stylesheet">
+</head>
+<body>
+
+	<!-- PRELOADER -->
+	<div class="page-loader">
+		<div class="loader">Carregando...</div>
+	</div>
+	<!-- /PRELOADER -->
+
+	<!-- BORDERS -->
+	<span class="border-line top-frame visible-lg"></span>
+	<span class="border-line right-frame visible-lg"></span>
+	<span class="border-line bottom-frame visible-lg"></span>
+	<span class="border-line left-frame visible-lg"></span>
+
+	<!-- WRAPPER -->
+	<div class="wrapper">
+
+		<nav class="border-navbar navbar-custom navbar-transparent navbar-fixed-top">
+				<div class="container">
+
+						<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+								</button>
+
+								<!-- YOU LOGO HERE -->
+								<a class="navbar-brand" href="index.html">
+										<!-- IMAGE OR SIMPLE TEXT -->
+										<img class="dark-logo" src="assets/images/site-logo.png" width="95" alt="">
+										<img class="light-logo" src="assets/images/site-logo-light.png" width="95" alt="">
+								</a>
+						</div>
+
+						<div class="collapse navbar-collapse" id="custom-collapse">
+
+								<ul class="nav navbar-nav navbar-right">
+
+										<li><a href="projetos.html" class="section-scroll">Projetos</a></li>
+										<li><a href="membros.html" class="section-scroll">Membros</a></li>
+										<li><a href="publicacoes.html" class="section-scroll">Publicações</a></li>
+										<li><a href="contato.html" class="section-scroll">Contato</a></li>
+
+										<li class="dropdown">
+												<a href="#" class="dropdown-toggle search-dropdown" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-search"></i></a>
+												<ul class="dropdown-menu leftauto" role="menu">
+														<li>
+																<div class="dropdown-search">
+																		<form>
+																				<input type="text" class="form-control" placeholder="Procurar...">
+																				<button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+																		</form>
+																</div>
+														</li>
+												</ul>
+										</li>
+
+								</ul>
+						</div>
+
+				</div>
+		</nav>
+		<!-- /NAVIGATION -->
+		<!-- HERO -->
+				<div class="container">
+
+                    <div class="row mt-50">
+
+                        <div class="col-md-8">
+                            <h1 class="bread-text text-white">Contato</h1>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+		</section>
+		<!-- /HERO -->
+
+		<!-- CONTACT -->
+		<section class="brick">
+
+			<div class="container">
+
+				<!-- brick title-->
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2 col-xs-12 mb-80">
+            			<h2 class="brick-title">Contate-nos!</h2>
+            			<div class="divider title-divider"></div>
+            			<p class="font-droid"> Qualquer que seja seu interesse ou dúvida sobre nós, nos deixe uma mensagem e responderemos o mais breve possível.</p>
+          			</div>
+				</div>
+				<!-- end of brick title -->
+
+				<div class="row mt-sm-70 mt-xs-20">
+
+					<div class="col-sm-7">
+
+						<form id="contact-form" novalidate="">
+
+							<div class="form-group">
+								<label class="sr-only" for="cname">Nome</label>
+								<input type="text" id="cname" class="form-control" name="cname" placeholder="Nome*" required="" data-validation-required-message="Por favor, digite seu nome.">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div class="form-group">
+								<label class="sr-only" for="cemail">Your Email</label>
+								<input type="email" id="cemail" name="cemail" class="form-control" placeholder="Email*" required="" data-validation-required-message="Por favor, digite seu email.">
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<div class="form-group">
+								<textarea class="form-control" id="cmessage" name="cmessage" rows="7" placeholder="Mensagem*" required="" data-validation-required-message="Por favor, digite sua mensagem."></textarea>
+								<p class="help-block text-danger"></p>
+							</div>
+
+							<button class="action-btn btn-g">
+								Enviar
+							</button>
+
+						</form>
+
+						<!-- Ajax response -->
+						<div id="contact-response" class="ajax-response"></div>
+
+					</div>
+
+					<div class="col-sm-4 col-sm-offset-1 mt-xs-50">
+
+                        <div class="info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="icon-phone"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Entre em contato!</h4>
+                                <p> Tássia Melo<br>
+                                    +00 000 000 00<br>
+                          					João Pessoa, PB, Brasil.
+                                </p>
+                            </div>
+                        </div>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- /CONTACT -->
+
+	</div>
+	<!-- /WRAPPER -->
+
+	<!-- Javascript files -->
+	<script src="assets/js/jquery-2.1.3.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+	<script src="assets/js/jquery.youtubebackground.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/jquery.simple-text-rotator.min.js"></script>
+	<script src="assets/js/isotope.pkgd.min.js"></script>
+	<script src="assets/js/packery-mode.pkgd.min.js"></script>
+	<script src="assets/js/appear.js"></script>
+	<script src="assets/js/jquery.easing.1.3.js"></script>
+	<script src="assets/js/jqBootstrapValidation.js"></script>
+	<script src="assets/js/jquery.fitvids.js"></script>
+	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
+	<script src="assets/js/contact.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/horizontaltimeline.js"></script>
+	<script src="assets/js/modernizr.js"></script>
+	<script src="assets/js/jquery.superslides.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBphh6ekXB5_c8DtKGCN7w_DZnIZvPGXLg" type="text/javascript"></script>
+
+
+</body>
+</html>
