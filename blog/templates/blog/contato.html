@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Tanislav Robert Marian">
 
-	<title>Entre ou cadastre-se</title>
+	<title>Contato</title>
 
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="assets/images/favicon.png">
@@ -37,7 +37,7 @@
 
 	<!-- PRELOADER -->
 	<div class="page-loader">
-		<div class="loader">Loading...</div>
+		<div class="loader">Carregando...</div>
 	</div>
 	<!-- /PRELOADER -->
 
@@ -73,9 +73,9 @@
 
 								<ul class="nav navbar-nav navbar-right">
 
-										<li><a href="#" class="section-scroll">Projetos</a></li>
-										<li><a href="#membros.html" class="section-scroll">Membros</a></li>
-										<li><a href="#" class="section-scroll">Publicações</a></li>
+										<li><a href="projetos.html" class="section-scroll">Projetos</a></li>
+										<li><a href="membros.html" class="section-scroll">Membros</a></li>
+										<li><a href="publicacoes.html" class="section-scroll">Publicações</a></li>
 										<li><a href="contato.html" class="section-scroll">Contato</a></li>
 
 										<li class="dropdown">
@@ -104,104 +104,88 @@
                     <div class="row mt-50">
 
                         <div class="col-md-8">
-                            <h1 class="bread-text text-white">Entre / Cadastre-se</h1>
-                            <div class="text-white">
-
-                            </div>
+                            <h1 class="bread-text text-white">Contato</h1>
                         </div>
-
-
+                        </div>
                     </div>
 
                 </div>
 		</section>
 		<!-- /HERO -->
 
-		<!-- LOGIN/REGISTER -->
+		<!-- CONTACT -->
 		<section class="brick">
 
 			<div class="container">
 
-				<div class="row">
+				<!-- brick title-->
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2 col-xs-12 mb-80">
+            			<h2 class="brick-title">Contate-nos!</h2>
+            			<div class="divider title-divider"></div>
+            			<p class="font-droid"> Qualquer que seja seu interesse ou dúvida sobre nós, nos deixe uma mensagem e responderemos o mais breve possível.</p>
+          			</div>
+				</div>
+				<!-- end of brick title -->
 
-					<div class="col-sm-6 col-sm-offset-3">
+				<div class="row mt-sm-70 mt-xs-20">
 
-						<h2 class="mb-30">Acesse sua conta</h2>
+					<div class="col-sm-7">
 
+						<form id="contact-form" novalidate="">
 
-						<!-- TABS -->
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#login" data-toggle="tab">Entre</a></li>
-							<li><a href="#register" data-toggle="tab">Cadastre-se</a></li>
-						</ul>
-
-						<div class="tab-content">
-
-							<div id="login" class="tab-pane active">
-								<form class="form">
-								<!-- Username -->
-								<div class="form-group">
-									<input type="text" name="username" id="email" class="form-control" placeholder="Email">
-								</div>
-								<!-- Password -->
-								<div class="form-group">
-									<input type="password" name="password" id="password" class="form-control" placeholder="Senha">
-								</div>
-								<div class="form-group">
-									<button class="action-btn btn-g block-btn">Entre</button>
-								</div>
-								<div class="form-group text-center">
-									<a href="">Esqueceu a senha?</a>
-								</div>
-							</form>
+							<div class="form-group">
+								<label class="sr-only" for="cname">Nome</label>
+								<input type="text" id="cname" class="form-control" name="cname" placeholder="Nome*" required="" data-validation-required-message="Por favor, digite seu nome.">
+								<p class="help-block text-danger"></p>
 							</div>
 
-							<div id="register" class="tab-pane">
-								<form class="form">
-									<!-- Email -->
-									<div class="form-group">
-										<input type="text" name="email" id="E-mail" class="form-control" placeholder="Email">
-									</div>
-									<!-- Username -->
-									<div class="form-group">
-										<input type="text" name="username" id="username" class="form-control" placeholder="Nome">
-									</div>
-
-									<div class="form-group">
-										<input type="text" name="email" id="CNPQ" class="form-control" placeholder="CNPQ">
-									</div>
-									<!-- Password -->
-									<div class="form-group">
-										<input type="password" name="password" id="password" class="form-control" placeholder="Senha">
-									</div>
-									<!-- Re-enter Password -->
-									<div class="form-group">
-										<input type="password" name="re-password" id="re-password" class="form-control" placeholder="Confime sua senha">
-									</div>
-									<div class="form-group">
-										<button class="action-btn btn-g block-btn">Cadastre-se</button>
-									</div>
-								</form>
+							<div class="form-group">
+								<label class="sr-only" for="cemail">Your Email</label>
+								<input type="email" id="cemail" name="cemail" class="form-control" placeholder="Email*" required="" data-validation-required-message="Por favor, digite seu email.">
+								<p class="help-block text-danger"></p>
 							</div>
 
-						</div>
+							<div class="form-group">
+								<textarea class="form-control" id="cmessage" name="cmessage" rows="7" placeholder="Mensagem*" required="" data-validation-required-message="Por favor, digite sua mensagem."></textarea>
+								<p class="help-block text-danger"></p>
+							</div>
 
-						<!-- /TABS -->
+							<button class="action-btn btn-g">
+								Enviar
+							</button>
 
+						</form>
+
+						<!-- Ajax response -->
+						<div id="contact-response" class="ajax-response"></div>
+
+					</div>
+
+					<div class="col-sm-4 col-sm-offset-1 mt-xs-50">
+
+                        <div class="info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="icon-phone"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Entre em contato!</h4>
+                                <p> Tássia Melo<br>
+                                    +00 000 000 00<br>
+                          					João Pessoa, PB, Brasil.
+                                </p>
+                            </div>
+                        </div>
 					</div>
 
 				</div>
 
 			</div>
-
 		</section>
-		<!-- /LOGIN/REGISTER -->
-
-
+		<!-- /CONTACT -->
 
 	</div>
 	<!-- /WRAPPER -->
-
 
 	<!-- Javascript files -->
 	<script src="assets/js/jquery-2.1.3.min.js"></script>
@@ -219,11 +203,12 @@
 	<script src="assets/js/jquery.fitvids.js"></script>
 	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
 	<script src="assets/js/contact.js"></script>
-	<script src="assets/js/horizontaltimeline.js"></script>
-	<script src="assets/js/jquery.mobile.custom.min.js"></script>
-	<script src="assets/js/modernizr.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/horizontaltimeline.js"></script>
+	<script src="assets/js/modernizr.js"></script>
 	<script src="assets/js/jquery.superslides.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBphh6ekXB5_c8DtKGCN7w_DZnIZvPGXLg" type="text/javascript"></script>
+
 
 </body>
 </html>
