@@ -1,31 +1,66 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.core.urlresolvers import reverse_lazy
+from django.utils import timezone
+
+from blog import models
+
 from django.shortcuts import render
 
-def index(request):
-    return render(request, 'blog/index.html', {})
+class MembroListView(generic.ListView):
 
-def contato(request):
-    return render(request, 'blog/contato.html', {})
+    model = models.Membro
+    template_name = 'blog/membros.html'
 
-def login(request):
-    return render(request, 'blog/login.html', {})
+class ProjetosListView(generic.ListView):
 
-def membros(request):
-    return render(request, 'blog/membros.html', {})
+    model = models.Projetos
+    template_name = 'blog/projetos.html'
 
-def projetos(request):
-    return render(request, 'blog/projetos.html', {})
 
-def projeto(request):
-    return render(request, 'blog/projeto.html', {})
+class ProjetoDetailsView(generic.DetailView):
 
-def publicacoes(request):
-    return render(request, 'blog/publicacoes.html', {})
+    model = models.Projetos
+    template_name = 'blog/projeto.html'
 
-def linha01(request):
-    return render(request, 'blog/linhadepesquisa1.html', {})
+class PublicacoesListView(generic.ListView):
 
-def linha02(request):
-    return render(request, 'blog/linhadepesquisa2.html', {})
+    model = models.Publicacao
+    template_name = 'blog/publicacoes.html'
 
-def linha03(request):
-    return render(request, 'blog/linhadepesquisa3.html', {})
+
+class contatoDetailsView(generic.DetailView):
+
+    model = models.contato
+    template_name = 'blog/contato.html'
+
+    def get_object(self):
+        pk = 1
+        return get_object_or_404 (models.contato,pk=pk)
+
+
+class LinhaDetailsView(generic.DetailView):
+
+    model = models.LinhaDePesquisa
+    template_name = 'blog/linhadepesquisa1.html'
+
+
+    def get_context_data(self, **kwargs):
+        context = super(LinhaDetailsView, self).get_context_data(**kwargs)
+        context['membros'] = models.Membro.objects.filter(projetos__linha_dp=context['object']).distinct()
+        return context
+
+class indexListView(generic.ListView):
+
+    model = models.Projetos
+    template_name = 'blog/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(indexListView, self).get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        #context['object_list'] = models.Projetos.objects.all()
+        print context
+        return context

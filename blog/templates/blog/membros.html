@@ -1,3 +1,5 @@
+{% load static from staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,29 +11,28 @@
 	<title>Membros</title>
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="assets/images/favicon.png">
-	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
-
+	<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+	<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}">
 	<!-- Bootstrap core CSS -->
-	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
 	<!-- Plugins -->
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
-	<link href="assets/css/et-line-font.css" rel="stylesheet">
-	<link href="assets/css/simpletextrotator.css" rel="stylesheet">
-	<link href="assets/css/magnific-popup.css" rel="stylesheet">
-	<link href="assets/css/owl.carousel.css" rel="stylesheet">
-	<link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
-	<link href="assets/css/superslides.css" rel="stylesheet">
-	<link href="assets/css/margins.css" rel="stylesheet">
-	<link href="assets/css/animate.css" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/et-line-font.css' %}" rel="stylesheet">
+	<link href="{% static 'css/simpletextrotator.css' %}" rel="stylesheet">
+	<link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+	<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+	<link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/superslides.css' %}" rel="stylesheet">
+	<link href="{% static 'css/margins.css' %}" rel="stylesheet">
+	<link href="{% static 'css/animate.css' %}" rel="stylesheet">
 
 	<!-- Template core CSS -->
-	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
 	<!-- Responsive media querries -->
-	<link href="assets/css/responsive.css" rel="stylesheet">
+	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
 </head>
 <body>
 
@@ -74,10 +75,10 @@
 
 								<ul class="nav navbar-nav navbar-right">
 
-										<li><a href="projetos.html" class="section-scroll">Projetos</a></li>
-										<li><a href="membros.html" class="section-scroll">Membros</a></li>
-										<li><a href="publicacoes.html" class="section-scroll">Publicações</a></li>
-										<li><a href="contato.html" class="section-scroll">Contato</a></li>
+									<li><a href="/projetos" class="section-scroll">Projetos</a></li>
+									<li><a href="/membros" class="section-scroll">Membros</a></li>
+									<li><a href="/publicacoes" class="section-scroll">Publicações</a></li>
+									<li><a href="/contato" class="section-scroll">Contato</a></li>
 
 										<li class="dropdown">
 												<a href="#" class="dropdown-toggle search-dropdown" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-search"></i></a>
@@ -113,131 +114,31 @@
 									<p> Essas pessoas contribuem e são fundamentais para a existência do grupo.</p>
             			<div class="divider title-divider"></div>
           			</div>
-				</div>
+
 				<!-- end of brick title -->
-                <!-- single member -->
+				<!-- single member -->
                 <div class="team-member col-md-4 col-sm-4 text-center">
+								{% for m in object_list %}
                     <div class="member-thumb">
                     	<div class="cover"><div class="cover-inner-left"></div></div>
-                        <img src="assets/images/eu.jpg" alt="Team Member" class="img-responsive">
+											{% if m.foto %}
+												<img src="{{ m.foto.url }}" alt="Team Member" class="img-responsive">
+											{% endif %}
                         <div class="team_cover"><div class="team_cover_inner"></div></div>
                             <div class="overlay">
-                                <h6>Olá! </h6>
-                                <p>Gosto de desperdiçar tempo escrevendo poesia. </p>
-                                <div class="social-links">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </div>
+                                <h6>Olá!! </h6>
+                                <p> {{m.biografia}} </p>
                             </div>
                     </div>
-                        <h3><a href="index.html">Lua Lacerda</a></h3>
-                        <span>designer</span>
+                        <h3><a href="/membro">{{m.nome}}</a></h3>
+                      {% endfor %}
                 </div>
-								<!-- single member -->
-                <div class="team-member col-md-4 col-sm-4 text-center">
-                    <div class="member-thumb">
-                    	<div class="cover"><div class="cover-inner-left"></div></div>
-                        <img src="assets/images/tassia.jpg" alt="Team Member" class="img-responsive">
-                        <div class="team_cover"><div class="team_cover_inner"></div></div>
-                            <div class="overlay">
-                                <h6>Prazer em conhecer! </h6>
-                                <p> Mulher, arquiteta, professora, it girl e feliz...(: </p>
-                                <div class="social-links">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </div>
-                            </div>
-                    </div>
-                        <h3><a href="index.html">Tássia Melo</a></h3>
-                        <span>Arquiteta</span>
-                </div>
+							</div>
+						</div>
                 <!-- end single member -->
-            		<!-- single member -->
-								<div class="team-member col-md-4 col-sm-4 text-center">
-										<div class="member-thumb">
-											<div class="cover"><div class="cover-inner-left"></div></div>
-												<img src="assets/images/g.jpg" alt="Team Member" class="img-responsive">
-												<div class="team_cover"><div class="team_cover_inner"></div></div>
-														<div class="overlay">
-																<h6>Diz, jovem! </h6>
-																<p>Gosto de vídeo game, cerveja e elaborar aulas.</p>
-																<div class="social-links">
-																		<a href=""><i class="fa fa-twitter"></i></a>
-																		<a href=""><i class="fa fa-facebook"></i></a>
-																		<a href=""><i class="fa fa-google"></i></a>
-																</div>
-														</div>
-										</div>
-												<h3><a href="index.html">Gustavo Soares</a></h3>
-												<span>Software Engineer</span>
-								</div>
-								<!-- end single member -->
-								<!-- single member -->
-                <div class="team-member col-md-4 col-sm-4 text-center">
-                    <div class="member-thumb">
-                    	<div class="cover"><div class="cover-inner-left"></div></div>
-                        <img src="assets/images/b.jpg" alt="Team Member" class="img-responsive">
-                        <div class="team_cover"><div class="team_cover_inner"></div></div>
-                            <div class="overlay">
-                                <h6>Oi! </h6>
-                                <p>Apaixonada pela vida e curtindo ela adoidado.</p>
-                                <div class="social-links">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </div>
-                            </div>
-                    </div>
-                        <h3><a href="index.html">Bianca Tavares</a></h3>
-                        <span>marketing</span>
-                </div>
-                <!-- end single member -->
-								<!-- single member -->
-                <div class="team-member col-md-4 col-sm-4 text-center">
-                    <div class="member-thumb">
-                    	<div class="cover"><div class="cover-inner-left"></div></div>
-                        <img src="assets/images/g.jpg" alt="Team Member" class="img-responsive">
-                        <div class="team_cover"><div class="team_cover_inner"></div></div>
-                            <div class="overlay">
-                                <h6>Diz, jovem! </h6>
-                                <p>Gosto de vídeo game, cerveja e elaborar aulas.</p>
-                                <div class="social-links">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </div>
-                            </div>
-                    </div>
-                        <h3><a href="index.html">Gustavo Soares </a></h3>
-                        <span>Software Engineer</span>
-                </div>
-                <!-- end single member -->
-								<!-- single member -->
-                <div class="team-member col-md-4 col-sm-4 text-center">
-                    <div class="member-thumb">
-                    	<div class="cover"><div class="cover-inner-left"></div></div>
-                        <img src="assets/images/tassia.jpg" alt="Team Member" class="img-responsive">
-                        <div class="team_cover"><div class="team_cover_inner"></div></div>
-                            <div class="overlay">
-                                <h6>Prazer em conhecer! </h6>
-                                <p>Mulher, arquiteta, professora, it girl e feliz...(: </p>
-                                <div class="social-links">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google"></i></a>
-                                </div>
-                            </div>
-                    </div>
-                        <h3><a href="index.html">Tássia Melo</a></h3>
-                        <span>Arquiteta</span>
-                </div>
-                <!-- end single member -->
-    			</div>
-			</div>
-		</section >
+		</section>
 		<!-- /ABOUT -->
+
 		<!--footer-->
 		<footer class="footer bg-light">
 
@@ -398,26 +299,28 @@
 	<!-- /WRAPPER -->
 
 	<!-- Javascript files -->
-	<script src="assets/js/jquery-2.1.3.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-	<script src="assets/js/jquery.youtubebackground.js"></script>
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/owl.carousel.min.js"></script>
-	<script src="assets/js/jquery.simple-text-rotator.min.js"></script>
-	<script src="assets/js/isotope.pkgd.min.js"></script>
-	<script src="assets/js/packery-mode.pkgd.min.js"></script>
-	<script src="assets/js/appear.js"></script>
-	<script src="assets/js/jquery.easing.1.3.js"></script>
-	<script src="assets/js/jqBootstrapValidation.js"></script>
-	<script src="assets/js/jquery.fitvids.js"></script>
-	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
-	<script src="assets/js/contact.js"></script>
-	<script src="assets/js/horizontaltimeline.js"></script>
-	<script src="assets/js/jquery.mobile.custom.min.js"></script>
-	<script src="assets/js/modernizr.js"></script>
-	<script src="assets/js/custom.js"></script>
-	<script src="assets/js/jquery.superslides.min.js"></script>
-
+	<script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+	<script src="{% static 'js/jquery.youtubebackground.js' %}"></script>
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/jquery.simple-text-rotator.min.js' %}"></script>
+	<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+	<script src="{% static 'js/packery-mode.pkgd.min.js' %}"></script>
+	<script src="{% static 'js/appear.js' %}"></script>
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+	<script src="{% static 'js/jquery.fitvids.js' %}"></script>
+	<script src="{% static 'js/jquery.parallax-1.1.3.js' %}"></script>
+	<script src="{% static 'js/contact.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
+	<script src="{% static 'js/splitslider.js' %}"></script>
+	<script src="{% static 'js/horizontaltimeline.js' %}"></script>
+	<script src="{% static 'js/jquery.mobile.custom.min.js' %}"></script>
+	<script src="{% static 'js/modernizr.js' %}"></script>
+	<script src="{% static 'js/particles.min.js' %}"></script>
+	<script src="{% static 'js/app.js' %}"></script>
+	<script src="{% static 'js/jquery.superslides.min.js' %}"></script>
 </body>
 </html>

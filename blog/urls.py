@@ -2,14 +2,12 @@ from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^contato', views.contato),
-    url(r'^login', views.login),
-    url(r'^membros', views.membros),
-    url(r'^projetos', views.projetos),
-    url(r'^projeto', views.projeto),
-    url(r'^publicacoes', views.publicacoes),
-    url(r'^acessibilidade', views.linha01),
-    url(r'^sustentabilidadedoedificio', views.linha02),
-    url(r'^sustentabilidadeespacosurbanos', views.linha03),
+    url(r'^$', views.indexListView.as_view(), name = 'index'),
+    url(r'^projetos/(?P<pk>[0-9]+)/$', views.ProjetoDetailsView.as_view(), name='projeto'),
+    url(r'^projetos', views.ProjetosListView.as_view(), name='projetos'),
+    url(r'^publicacoes', views.PublicacoesListView.as_view(), name = 'publicacoes'),
+    url(r'^membros', views.MembroListView.as_view(), name = 'Membro'),
+    url(r'^areas/(?P<pk>[0-9]+)/$', views.LinhaDetailsView.as_view(), name='LinhaDePesquisa'),
+    url(r'^contato', views.contatoDetailsView.as_view(), name='Contato'),
+
 ]
