@@ -58,9 +58,11 @@ class indexListView(generic.ListView):
     model = models.Projetos
     template_name = 'blog/index.html'
 
+    def get_queryset(self):
+        return models.Projetos.objects.all()
+
     def get_context_data(self, **kwargs):
         context = super(indexListView, self).get_context_data(**kwargs)
         context['now'] = timezone.now()
-        #context['object_list'] = models.Projetos.objects.all()
-        print context
+        context['lp_list'] = models.LinhaDePesquisa.objects.all()
         return context

@@ -110,12 +110,10 @@
 					<div class="hero-text">
 						<h1 class="lop-size-lg">NECCA </h1>
 											 <div class="local-scroll hidden-xs">
-
-																		 <a href="areas/2/" class="section-scroll main_btn blue-btn size-xs">Acessibilidade em Edificações e Espaços Urbanos e Rurais</a>
+												 						{% for l in lp_list %}
+																		 <a href="{% url 'LinhaDePesquisa' l.pk %}" class="section-scroll main_btn blue-btn size-xs">{{ l.nome }}</a>
 																		 <span>&nbsp;</span>
-																		 <a href="areas/3/" class="section-scroll main_btn blue-btn size-xs">Sustentabilidade do Edifício</a>
-																		 <span>&nbsp;</span>
-																		 <a href="areas/4/" class="section-scroll main_btn blue-btn size-xs">Sustentabilidade em Espaços Urbanos e Rurais</a>
+																		{% endfor %}
 																 </div>
 
 					</div>
@@ -164,12 +162,15 @@ eu só existo agora e nunca mais.</p>
 								<div class="divider title-divider"></div>
 									</div>
 					</div>
+{% for p in object_list %}
+{{ p.nome }}
+{% endfor %}
 					<!-- end of brick title -->
 									<div class="row mt-50 mt-sm-0">
 											<div class="col-sm-12 overflow">
 													<div class="row portfolio-container">
 															<div class="slider-projects owl-carousel owl-theme text-center">
-																 {% for projeto in projetos_list %}
+																 {% for p in object_list %}
 																 <!--test-->
 																 <!--test-->
 																	<div class="item">
